@@ -1,0 +1,12 @@
+<h1>New Game</h1>
+<ul class="list">
+  <% @letters.each do |i|%>
+    <li class="list-inline"><%= i %></li>
+  <% end %>
+</ul>
+<form action="score" method="post">
+  <input type="text" name="user_letters" class=textfield>
+  <input type="submit" value="Play" class= submit>
+  <%= hidden_field_tag :letters, @letters %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
